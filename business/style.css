@@ -1,18 +1,20 @@
-/* tags */
-ul {
-    list-style: none;
+
+  /* font */
+  @font-face {
+    font-family: "gong";
+    src: url("/img&font/font/Gong\ Gothic\ Medium.ttf");
   }
-  span {
-    /* width: 5px; */
-    color: white;
+  @font-face {
+    font-family: "nanum";
+    src: url("/img&font/font/NanumSquareRoundB.ttf");
   }
-  hr {
-    text-align: center;
-    border-color: #f2f4f641;
+  @font-face {
+    font-family: "gongli";
+    src: url("/img&font/font/Gong\ Gothic\ Light.ttf");
   }
-  label,
-  input {
-    display: inline-block;
+  @font-face {
+    font-family: "main";
+    src: url("/img&font/font/HS두꺼비체.ttf");
   }
   
   .container {
@@ -81,6 +83,7 @@ ul {
   #search_submit:hover {
     opacity: 0.4;
   }
+
   ul li {
     list-style: none;
     padding-inline-start: 0px;
@@ -385,6 +388,39 @@ ul {
   #modify-button {
     margin-left: 50px;
   }
+  
+  /* footer */
+  /* .footer {
+    display: inline-block;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: left;
+    left: 17%;
+    padding-top: 50px;
+    padding-bottom: 25px;
+    height: 150px;
+    position: relative;
+    top: 400px;
+    margin-bottom: 300px;
+  }
+  
+  .footer h3 {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    text-align: left;
+    padding-bottom: 20px;
+    font-family: "gongli";
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .footer p {
+    line-height: 10px;
+    font-family: "nanum";
+  }
+  #footer-hr {
+    position: relative;
+    top: 450px;
+  } */
   
   /* body 시작 */
   .body-container {
