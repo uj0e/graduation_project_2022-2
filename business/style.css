@@ -1,4 +1,20 @@
-
+/* tags */
+ul {
+    list-style: none;
+  }
+  span {
+    /* width: 5px; */
+    color: white;
+  }
+  hr {
+    text-align: center;
+    border-color: #f2f4f641;
+  }
+  label,
+  input {
+    display: inline-block;
+  }
+  
   /* font */
   @font-face {
     font-family: "gong";
@@ -83,7 +99,7 @@
   #search_submit:hover {
     opacity: 0.4;
   }
-
+  
   ul li {
     list-style: none;
     padding-inline-start: 0px;
