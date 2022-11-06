@@ -24,10 +24,24 @@ app.post("/login", (req, res) => {
   
 });
 
+app.get("/singup", (req, res) => {
+  console.log("회원가입페이지");
+  res.sendFile(__dirname + "/signup.html");
+})
+
+app.get("/business_login", (req, res) => {
+  console.log("사업자 회원가입");
+  res.sendFile(__dirname + "/business_login.html");
+});
+
+app.get("/consumer_login", (req, res) => {
+  console.log("소비자 회원가입");
+  res.sendFile(__dirname + "/consumer_login.html");
+});
+
 
 const port = process.env.PORT || 3002;
 
 app.listen(port, function () {
   console.log(`${port} is running`);
-  console.log(__dirname);
 });
