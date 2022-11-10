@@ -203,7 +203,7 @@ body {
 }
 
 /* sort */
-.listsort ul li{
+.listsort{
   float: right;
   position: relative;
   right : 5%;
