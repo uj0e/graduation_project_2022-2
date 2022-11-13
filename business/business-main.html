@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>사업자 - 메인페이지</title>
+    <link rel="stylesheet" href="/business/style.css" />
+    <link rel="stylesheet" href="/business/service.css" />
+  </head>
+  <body>
+      <header data-include="/Header.html">
+      </header>
+  
+<!--매인 페이지-->
+    <div class="all-area">
+      <div id="header-container">
+        <div id="first-span">
+          <img src="/img&font/img/ㅍㅎㄴㄹ.png">
+        </div>
+        <div class="user-name">
+          펀한누리(주)
+        </div>  
+        <button class="funding-charge">
+          펀딩 등록하기
+        </button>
+      </div>
+      
+      <div class="main_option_box">
+        <div class="body-container">
+          <section class="faq-contents">
+            <div id="first-q">
+              <div id="object_first" class="object_option">
+                내 정보
+                <div>
+                  등록/수정
+                </div>
+              </div>
+              <div id="object_second" class="object_option">
+                진행중인 펀딩
+                <div>
+                  2건
+                </div>
+              </div>
+              <div id="object_last" class="object_option">
+                전체 펀딩
+                <div>
+                  3건
+                </div>
+              </div>
+            </div>
+
+            <div class="first-constents on">
+              <% if( division == "1"){ %>
+              <div id = "mypage_div">
+                <form method="post" action="">
+                    <table  class="mypage_table">
+                        <tr>
+                            <td><label>상호명 : </label></td>
+                            <td name="business_name" class = "label_name" > <%= business_name %></td>
+                        </tr>
+                        <tr>
+                            <td><label>사업자 번호 : </label></td>
+                            <td name="business_num" class = "label_name" > <%= business_num %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>분야 : </label></td>
+                            <td name="field" class = "label_name" > <%= field %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>이름(담당자) : </label></td>
+                            <td name="name" class = "label_name" > <%= name %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>아이디 : </label></td>
+                            <td name="id" class = "label_name" > <%= id %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 : </label></td>
+                            <td name="password" class = "label_name" > <%= password %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 질문 : </label></td>
+                            <td name="password_question" class = "label_name" > <%= password_question %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 답변 : </label></td>
+                            <td name="password_answer" class = "label_name" > <%= password_answer %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>주소 : </label></td>
+                            <td name="address" class = "label_name" > <%= address %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>e-mail : </label></td>
+                            <td name="e_mail" class = "label_name" > <%= e_mail %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>전화번호 : </label></td>
+                            <td name="phone_number" class = "label_name" > <%= phone_number %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>계좌번호 : </label></td>
+                            <td name="account_num" class = "label_name" > <%= account_num %> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="bt_td">
+                                <input id="bt" type="button" value="수정하기">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+              </div>
+
+              <!-- 수정 클릭 시 마이페이지 -->
+              <div id = "mypage_div_update">
+                <form method="post" action="/update">
+                    <table  class="mypage_table2">
+                        <tr>
+                            <td><label>상호명 : </label></td>
+                            <td class="label_name"><input name="business_name" class="label_name" value="<%= business_name %>"></td>
+                        </tr>
+                        <tr>
+                            <td><label>사업자 번호 : </label></td>
+                            <td name="business_num" class = "label_name" > <%= business_num %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>분야 : </label></td>
+                            <td name="field" class = "label_name" > <%= field %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>이름(담당자) : </label></td>
+                            <td name="name" class = "label_name" > <%= name %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>아이디 : </label></td>
+                            <td name="id" class="label_name" > <%= id %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 : </label></td>
+                            <td class="label_name"> <input name="password" class = "label_name" value="<%= password %>" > </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 질문 : </label></td>
+                            <td name="password_question" class = "label_name" > <%= password_question %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 답변 : </label></td>
+                            <td class="label_name"> <input  name="password_answer" class = "label_name" value="<%= password_answer %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>주소 : </label></td>
+                            <td class="label_name"> <input name="address" class = "label_name" value = "<%= address %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>e-mail : </label></td>
+                            <td class="label_name"> <input  name="e_mail" class = "label_name" value = "<%= e_mail %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>전화번호 : </label></td>
+                            <td class="label_name"> <input  name="phone_number" class = "label_name" value = "<%= phone_number %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>계좌번호 : </label></td>
+                            <td class="label_name"> <input name="account_num" class = "label_name" value = "<%= account_num %>"> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="bt_td">
+                                <input type="submit" value="확인" id="bt2">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+              <% } else if(division == "2"){ %>
+                <div id = "mypage_div">
+                    <form method="post" action="">
+                        <table  class="mypage_table">
+                            <tr>
+                                <td><label>이름(담당자) : </label></td>
+                                <td name="name" class = "label_name" > <%= name %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>아이디 : </label></td>
+                                <td name="id" class = "label_name" > <%= id %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>비밀번호 : </label></td>
+                                <td name="password" class = "label_name" > <%= password %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>비밀번호 확인 질문 : </label></td>
+                                <td name="password_question" class = "label_name" > <%= password_question %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>비밀번호 확인 답변 : </label></td>
+                                <td name="password_answer" class = "label_name" > <%= password_answer %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>주소 : </label></td>
+                                <td name="address" class = "label_name" > <%= address %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>e-mail : </label></td>
+                                <td name="e_mail" class = "label_name" > <%= e_mail %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>전화번호 : </label></td>
+                                <td name="phone_number" class = "label_name" > <%= phone_number %> </td>
+                            <tr>
+                              <td colspan="2" id="bt_td">
+                                <input id="bt" type="button" value="수정하기">
+                            </td>   
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <!-- 수정 마이페이지 -->
+                <div id = "mypage_div_update" >
+                  <form method="post" action="/update">
+                      <table  class="mypage_table2">
+                          <tr>
+                              <td><label>이름(담당자) : </label></td>
+                              <td name="name" class = "label_name" > <%= name %> </td>
+                          </tr>
+                          <tr>
+                              <td><label>아이디 : </label></td>
+                              <td name="id" class="label_name" > <%= id %> </td>
+                          </tr>
+                          <tr>
+                            <td><label>비밀번호 : </label></td>
+                            <td class="label_name"> <input name="password" class = "label_name" value="<%= password %>" > </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 질문 : </label></td>
+                            <td name="password_question" class = "label_name" > <%= password_question %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 답변 : </label></td>
+                            <td class="label_name"> <input  name="password_answer" class = "label_name" value="<%= password_answer %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>주소 : </label></td>
+                            <td class="label_name"> <input name="address" class = "label_name" value = "<%= address %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>e-mail : </label></td>
+                            <td class="label_name"> <input  name="e_mail" class = "label_name" value = "<%= e_mail %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>전화번호 : </label></td>
+                            <td class="label_name"> <input  name="phone_number" class = "label_name" value = "<%= phone_number %>"> </td>
+                        </tr>
+                            <td colspan="2">
+                              <input type="submit" value="확인" id="bt2">
+                            </td>
+                          </tr>
+                      </table>
+                  </form>
+              </div>
+                <% } %>
+            </div>
+            
+            <div class="second-constents on">
+              <div id="first-one">
+                <img src="/img&font/img/pr_tv.png" class="img-style-two">
+                <h4>상품명(1번상품)<img src="/img&font/img/pencil.png" class="per_img"></h4>
+                <div class="progress">
+                  <div class="progress-done" data-done="90"></div>
+                  <span class="per_style">90%</span>
+                </div>
+              </div>
+
+              <div class="first-first-one">
+                <div>
+                  <label class="list_set_option"> 1번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="915,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="150">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                
+                <hr style="width: 95%" />
+                <div> 
+                  <label class="list_set_option"> 2번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="38,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1200">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option"> 3번제품 </label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="15,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="500">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option_name">전체 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="2000">
+                  <label class="list_set_option_ll">개</label><br>
+                  <label class="list_set_option_name">판매 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1850">
+                  <label class="list_set_option_ll">개</label><br>
+                  <hr style="width: 95%" />
+                  <label class="list_set_option_a">총 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_3" placeholder="190,350,000">
+                  <label class="list_set_option_b">원</label>
+                </div>
+              </div>
+              <hr id="line" style="width: 95%" />
+
+              <div id="second-one">
+                <img src="/img&font/img/furniture_sofa.jpg" class="img-style-two">
+                <h4>상품명(2번상품)<img src="/img&font/img/pencil.png" class="per_img"></h4>
+                <div class="progress">
+                  <div class="progress-done" data-done="60"></div>
+                  <span class="per_style">60%</span>
+                </div>
+              </div>
+              
+              <div class="second-second-one">
+                <div>
+                  <label class="list_set_option"> 1번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="915,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="150">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                
+                <hr style="width: 95%" />
+                <div> 
+                  <label class="list_set_option"> 2번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="38,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1200">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option"> 3번제품 </label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="15,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="500">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option_name"> 전체 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="2000">
+                  <label class="list_set_option_ll">개</label><br>
+                  <label class="list_set_option_name">판매 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1850">
+                  <label class="list_set_option_ll">개</label><br>
+                  <hr style="width: 95%" />
+                  <label class="list_set_option_a">총 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_3" placeholder="190,350,000">
+                  <label class="list_set_option_b">원</label>
+                </div>
+              </div>
+              <hr id="line" style="width: 95%" />
+            </div>
+            
+            <div class="last-constents on">
+              <div id="first-two">
+                <img src="/img&font/img/pr_tv.png" class="img-style-two">
+                <h4>상품명(1번상품)<img src="/img&font/img/pencil.png" class="per_img"></h4>
+                <div class="progress">
+                  <div class="progress-done" data-done="90"></div>
+                  <span class="per_style">90%</span>
+                </div>
+              </div>
+
+              <div class="first-first-two">
+                <div>
+                  <label class="list_set_option"> 1번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="915,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="150">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                
+                <hr style="width: 95%" />
+                <div> 
+                  <label class="list_set_option"> 2번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="38,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1200">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option"> 3번제품 </label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="15,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="500">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option_name"> 전체 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="2000">
+                  <label class="list_set_option_ll">개</label><br>
+                  <label class="list_set_option_name">판매 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1850">
+                  <label class="list_set_option_ll">개</label><br>
+                  <hr style="width: 95%" />
+                  <label class="list_set_option_a">총 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_3" placeholder="190,350,000">
+                  <label class="list_set_option_b">원</label>
+                </div>
+              </div>
+              <hr id="line" style="width: 95%" />
+              
+              <div id="second-two">
+                <img src="/img&font/img/furniture_sofa.jpg" class="img-style-two">
+                <h4>상품명(2번상품)<img src="/img&font/img/pencil.png" class="per_img"></h4>
+                <div class="progress">
+                  <div class="progress-done" data-done="60"></div>
+                  <span class="per_style">60%</span>
+                </div>
+              </div>
+
+              <div class="second-second-two">
+                <div>
+                  <label class="list_set_option"> 1번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="915,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="150">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                
+                <hr style="width: 95%" />
+                <div> 
+                  <label class="list_set_option"> 2번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="38,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1200">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option"> 3번제품 </label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="15,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="500">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option_name"> 전체 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="2000">
+                  <label class="list_set_option_ll">개</label><br>
+                  <label class="list_set_option_name">판매 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1850">
+                  <label class="list_set_option_ll">개</label><br>
+                  <hr style="width: 95%" />
+                  <label class="list_set_option_a">총 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_3" placeholder="190,350,000">
+                  <label class="list_set_option_b">원</label>
+                </div>
+              </div>
+              <hr id="line" style="width: 95%" />
+
+              <div id="third-two">
+                <div class="funding-done">
+                  <img src="/img&font/img/furniture_speakerTable.jpg" class="img-style-two">
+                  <h4>상품명(3번상품)<img src="/img&font/img/pencil.png" class="per_img"></h4>
+                <div class="progress">
+                  <div class="progress-done" data-done="90"></div>
+                  <span class="per_style">90%</span>
+                </div>
+                </div>
+                <div class="funding-done-done">
+                  <label class="funding-done-font">펀딩완료</label>
+                </div>
+              </div>
+
+              <div class="third-third-two">
+                <div>
+                  <label class="list_set_option"> 1번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="915,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="150">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                
+                <hr style="width: 95%" />
+                <div> 
+                  <label class="list_set_option"> 2번제품</label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="38,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1200">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option"> 3번제품 </label>
+                  <label class="list_set_option_pp">금액 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count" placeholder="15,000">
+                  <label class="list_set_option_p">원</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="500">
+                  <label class="list_set_option_l">개</label>
+                </div>
+                <hr style="width: 95%" />
+                <div>
+                  <label class="list_set_option_name"> 전체 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="2000">
+                  <label class="list_set_option_ll">개</label><br>
+                  <label class="list_set_option_name">판매 개수 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_2" placeholder="1850">
+                  <label class="list_set_option_ll">개</label><br>
+                  <hr style="width: 95%" />
+                  <label class="list_set_option_a">총 :</label>
+                  <input type="text" style="text-align: right;" class="list_set_option_count_3" placeholder="190,350,000">
+                  <label class="list_set_option_b">원</label>
+                </div>
+              </div>
+              <hr id="line" style="width: 95%" />
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>    
+<!--여기까지-->
+    <hr id="footer-hr" />
+    <footer data-include="/Footer.html" class="footer">
+    </footer>
+  </body>
+  <script type="text/javascript" src="/jquery-3.6.0.js"></script>
+  <script src="/business/business-main.js"></script>
+  <script src="/H_F.js"></script>
+</html>
