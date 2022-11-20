@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>사업자 - 메인페이지</title>
+    <link rel="stylesheet" href="/business/style.css" />
+    <link rel="stylesheet" href="/service/service_style.css" />
+  </head>
+  <body>
+    <header data-include="/Header_login.html">
+    </header>
+
+<!--매인 페이지-->
+    <div class="all-area">
+      <div id="header-container">
+        <div id="first-span">
+          <img src="/img&font/img/ㅍㅎㄴㄹ.png">
+        </div>
+        <div class="user-name">
+          펀한누리(주)
+        </div>  
+        <button class="funding-charge">
+          펀딩 등록하기
+        </button>
+      </div>
+      
+      <div class="main_option_box">
+        <div class="body-container">
+          <section class="faq-contents">
+            <div id="first-q">
+              <div id="object_first" class="object_option">
+                내 정보
+                <div>
+                  등록/수정
+                </div>
+              </div>
+              <div id="object_second" class="object_option">
+                진행중인 펀딩
+                <div>
+                  2건
+                </div>
+              </div>
+              <div id="object_last" class="object_option">
+                전체 펀딩
+                <div>
+                  3건
+                </div>
+              </div>
+            </div>
+
+            <div class="first-constents on">
+              <% if( rows[0].division == "1"){ %>
+              <div id = "mypage_div">
+                <form method="post" action="">
+                    <table  class="mypage_table">
+                        <tr>
+                            <td><label>상호명 : </label></td>
+                            <td name="business_name" class = "label_name" > <%= rows[0].business_name %></td>
+                        </tr>
+                        <tr>
+                            <td><label>사업자 번호 : </label></td>
+                            <td name="business_num" class = "label_name" > <%= rows[0].business_num %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>분야 : </label></td>
+                            <td name="field" class = "label_name" > <%= rows[0].field %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>이름(담당자) : </label></td>
+                            <td name="name" class = "label_name" > <%= rows[0].name %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>아이디 : </label></td>
+                            <td name="id" class = "label_name" > <%= rows[0].id %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 : </label></td>
+                            <td name="password" class = "label_name" > <%= rows[0].password %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 질문 : </label></td>
+                            <td name="password_question" class = "label_name" > <%= rows[0].password_question %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 답변 : </label></td>
+                            <td name="password_answer" class = "label_name" > <%= rows[0].password_answer %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>주소 : </label></td>
+                            <td name="address" class = "label_name" > <%= rows[0].address %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>e-mail : </label></td>
+                            <td name="e_mail" class = "label_name" > <%= rows[0].e_mail %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>전화번호 : </label></td>
+                            <td name="phone_number" class = "label_name" > <%= rows[0].phone_number %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>계좌번호 : </label></td>
+                            <td name="account_num" class = "label_name" > <%= rows[0].account_num %> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" id="bt_td">
+                                <input id="bt" type="button" value="수정하기">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+              </div>
+
+              <!-- 수정 클릭 시 마이페이지 -->
+              <div id = "mypage_div_update">
+                <form method="post" action="/update">
+                    <table  class="mypage_table2">
+                        <tr>
+                            <td><label>상호명 : </label></td>
+                            <td class="label_name"><input name="business_name" class="label_name" value="<%= rows[0].business_name %>"></td>
+                        </tr>
+                        <tr>
+                            <td><label>사업자 번호 : </label></td>
+                            <td name="business_num" class = "label_name" > <%= rows[0].business_num %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>분야 : </label></td>
+                            <td name="field" class = "label_name" > <%= rows[0].field %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>이름(담당자) : </label></td>
+                            <td name="name" class = "label_name" > <%= rows[0].name %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>아이디 : </label></td>
+                            <td name="id" class="label_name" > <%= rows[0].id %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 : </label></td>
+                            <td class="label_name"> <input name="password" class = "label_name" value="<%= rows[0].password %>" > </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 질문 : </label></td>
+                            <td name="password_question" class = "label_name" > <%= rows[0].password_question %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 답변 : </label></td>
+                            <td class="label_name"> <input  name="password_answer" class = "label_name" value="<%= rows[0].password_answer %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>주소 : </label></td>
+                            <td class="label_name"> <input name="address" class = "label_name" value = "<%= rows[0].address %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>e-mail : </label></td>
+                            <td class="label_name"> <input  name="e_mail" class = "label_name" value = "<%= rows[0].e_mail %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>전화번호 : </label></td>
+                            <td class="label_name"> <input  name="phone_number" class = "label_name" value = "<%= rows[0].phone_number %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>계좌번호 : </label></td>
+                            <td class="label_name"> <input name="account_num" class = "label_name" value = "<%= rows[0].account_num %>"> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" value="확인" id="bt2">
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+              <% } else if(division == "2"){ %>
+                <div id = "mypage_div">
+                    <form method="post" action="">
+                        <table  class="mypage_table">
+                            <tr>
+                                <td><label>이름(담당자) : </label></td>
+                                <td name="name" class = "label_name" > <%= rows[0].name %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>아이디 : </label></td>
+                                <td name="id" class = "label_name" > <%= rows[0].id %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>비밀번호 : </label></td>
+                                <td name="password" class = "label_name" > <%= rows[0].password %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>비밀번호 확인 질문 : </label></td>
+                                <td name="password_question" class = "label_name" > <%= rows[0].password_question %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>비밀번호 확인 답변 : </label></td>
+                                <td name="password_answer" class = "label_name" > <%= rows[0].password_answer %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>주소 : </label></td>
+                                <td name="address" class = "label_name" > <%= rows[0].address %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>e-mail : </label></td>
+                                <td name="e_mail" class = "label_name" > <%= rows[0].e_mail %> </td>
+                            </tr>
+                            <tr>
+                                <td><label>전화번호 : </label></td>
+                                <td name="phone_number" class = "label_name" > <%= rows[0].phone_number %> </td>
+                            <tr>
+                              <td colspan="2" id="bt_td">
+                                <input id="bt" type="button" value="수정하기">
+                            </td>   
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <!-- 수정 마이페이지 -->
+                <div id = "mypage_div_update" >
+                  <form method="post" action="/update">
+                      <table  class="mypage_table2">
+                          <tr>
+                              <td><label>이름(담당자) : </label></td>
+                              <td name="name" class = "label_name" > <%= rows[0].name %> </td>
+                          </tr>
+                          <tr>
+                              <td><label>아이디 : </label></td>
+                              <td name="id" class="label_name" > <%= rows[0].id %> </td>
+                          </tr>
+                          <tr>
+                            <td><label>비밀번호 : </label></td>
+                            <td class="label_name"> <input name="password" class = "label_name" value="<%= rows[0].password %>" > </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 질문 : </label></td>
+                            <td name="password_question" class = "label_name" > <%= rows[0].password_question %> </td>
+                        </tr>
+                        <tr>
+                            <td><label>비밀번호 확인 답변 : </label></td>
+                            <td class="label_name"> <input  name="password_answer" class = "label_name" value="<%= rows[0].password_answer %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>주소 : </label></td>
+                            <td class="label_name"> <input name="address" class = "label_name" value = "<%= rows[0].address %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>e-mail : </label></td>
+                            <td class="label_name"> <input  name="e_mail" class = "label_name" value = "<%= rows[0].e_mail %>"> </td>
+                        </tr>
+                        <tr>
+                            <td><label>전화번호 : </label></td>
+                            <td class="label_name"> <input  name="phone_number" class = "label_name" value = "<%= rows[0].phone_number %>"> </td>
+                        </tr>
+                            <td colspan="2">
+                              <input type="submit" value="확인" id="bt2">
+                            </td>
+                          </tr>
+                      </table>
+                  </form>
+              </div>
+                <% } %>
+            </div>
+            
+
+            
+            
+            
+          </section>
+        </div>
+      </div>
+    </div>    
+<!--여기까지-->
+    <hr id="footer-hr" />
+    <footer data-include="/Footer.html" class="footer">
+    </footer>
+  </body>
+  <script type="text/javascript" src="/jquery-3.6.0.js"></script>
+  <script src="/business/business_main_style.js"></script>
+  <script src="/H_F.js"></script>
+</html>
+
+<!-- <% if(data2.end < now()){%>
+                    <div class="funding-done-done">
+                      <label class="funding-done-font">펀딩완료</label>
+                    </div>
+                  <% } %> -->

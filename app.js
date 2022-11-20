@@ -72,6 +72,16 @@ const loginPostSignup = require("./loginPostRouter");
 
 app.post("/login", loginPostSignup.loginRouter);
 
+// 마이페이지 불러오기
+const mypageRouter = require("./mypageRouter");
+
+app.get("/mypage", mypageRouter);
+
+// 마이페이지 수정
+const updateRouter = require("./updateRouter");
+
+app.post("/update", updateRouter.updateRouter);
+
 // 상품등록수정
 app.use(express.static("public"));
 
