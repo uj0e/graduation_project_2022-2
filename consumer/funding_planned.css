@@ -128,24 +128,35 @@ body {
 }
 /* header */
 
-#early {
+#fundingplan {
   font-family: 'gong';
   font-size: 20px;
-  color: black;
+  color :black;
   text-decoration-line: none;
   position: absolute;
   top: 53%;
-  left: 44%;
+  left: 37%;
 }
 
-#early:hover {
-  color: white;
-  transition: color 0.2s;
+#fundingplan:hover{
+color: white;
+transition: color 0.2s;
+}
+/* sort */
+.listsort{
+  list-style: none;
+  float: right;
+  position: relative;
+  right : 5%;
+  padding-right: 20px;
+  padding-top: 55px;
+  padding-bottom: 15px;
+  font-family: 'gongli';
+  color: #4f4f4f;
 }
 
-/* item */
 
-/* early item */
+/* item */ /* funding_plan item */
 #wapper.funplan{
   width: 420px;
   display: grid;
@@ -156,40 +167,43 @@ body {
   margin: 0px auto;
   justify-content: center;
   justify-items: center;
+
 }
 
-/* #plusp{
-padding-top: 15px ;
-} */
-/* .funp {
-display: flex;
+#plusp{
+  padding-top: 15px ;
+}
+.funp {
+  display: flex;
+    font-family: 'gong';
+    font-size: 25px;
+    color: #008299;
+    flex-direction: column;
+    align-items: flex-end;
+    
+}
+.item h2 {
   font-family: 'gong';
-  font-size: 25px;
-  color: #008299;
-  flex-direction: column;
-  align-items: flex-end;
-} */
-/* .item h2 {
-font-family: 'gong';
-font-size: 28px;
-color: black;
-position: absolute;
-top: 45%;
-left: 37%;
-} */
-/* .over {
-position: relative;
-border: 2px solid #ccc;
-border-radius: 5px;
-width: 420px;
-height: 300px;
-display: block;
-opacity: 0.6;
+  font-size: 28px;
+  color: black;
+  position: absolute;
+  top: 45%;
+  left: 37%;
+}
+.over {
+  position: relative;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 420px;
+  height: 300px;
+  display: block;
+  opacity: 0.6;
 
 }
 .over:hover {
-border: 2px solid #008299;
-} */
+  border: 2px solid #008299;
+}
+
 
 .item {
   width: 424px;
@@ -228,31 +242,7 @@ border: 2px solid #008299;
 .itemimg:hover {
   border: 2px solid #008299;
 }
-
-/*early*/
-
-/* .item p {
-  font-family: 'gong';
-  text-align: left;
-  line-height: 55px;
-  font-size: 23px;
-  color: #008299;
-} */
-
-.early {
-  display: flex;
-  font-family: 'gong';
-  padding-top: 5px;
-  font-size: 25px;
-  justify-content: space-between;
-  line-height: 55px;
-  color: #ee5836;
-  flex-direction: column;
-    align-items: flex-end;
-}
-
-/*글자 줄임*/
-
+/* 글자 줄임*/
 #hidden{
   white-space: normal;
   display: -webkit-box;
@@ -375,86 +365,4 @@ hr{
 .hr{
   padding-bottom: 100px;  
   border-left: none;
-  }
-/*search*/
-/* #wrap {
-  position: absolute;
-  left: 80%;
-  top: 44%;
 }
-
-input[type="text"] {
-  height: 30px;
-  font-size: 15px;
-  font-family: "nanum";
-  border: none;
-  border-radius: 15px;
-  outline: none;
-  color: rgb(0, 0, 0);
-  padding: 3px;
-  padding-left: 30px;
-  padding-right: 30px;
-  width: 210px;
-  position: absolute;
-  right: 40px;
-  z-index: 3;
-  cursor: pointer;
-  text-align: center;
-}
-
-input[type="text"]:focus {
-  width: 210px;
-  z-index: 1;
-  cursor: text;
-  position: absolute;
-  right: 40px;
-  background-color: white;
-}
-
-input[type="submit"] {
-  height: 25px;
-  width: 30px;
-  color: red;
-  float: right;
-  background: url('/search.svg') no-repeat;
-  text-indent: -10000px;
-  border: none;
-  position: absolute;
-  right: 0px;
-  z-index: 2;
-  cursor: pointer;
-  top: 7px;
-}
-
-input[type="submit"]:hover {
-  opacity: 0.4;
-} */
-
-
-/* .nav_main {
-  width: 100%;
-  height: 100px;
-  background-color: #008299;
-  margin: 10px;
-  margin-top: -26px;
-  display: flex;
-
-} */
-
-
-/* sort */
-.listsort{
-  list-style: none;
-  float: right;
-  position: relative;
-  right : 5%;
-  padding-right: 20px;
-  padding-top: 55px;
-  padding-bottom: 15px;
-  font-family: 'gongli';
-  color: #4f4f4f;
-  }
-
-
-
-

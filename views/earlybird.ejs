@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Main_consumer</title>
+    <title>Early_consumer</title>
     <link rel="stylesheet" href="/consumer/earlybird.css" />
   </head>
   <body>
     <div class="container">
-      <header data-include="/Header.html">
-      </header>
-      
-      <div id="main_body">
+      <% if (session == true ){%>
+        <header data-include="/Header_login.html">
+        </header>
+        <%} else {%>
+          <header data-include="/Header.html">
+          </header>
+        <%} %>
+
+    <div id="main_body">
       <!-- 이벤트 창 -->
       <div>
         <div id="arrow-left" class="arrow"></div>
@@ -97,88 +102,93 @@
       <div id="item-list">
         <div>
           <ul>
-            <li class="listsort">오름차순</li>
-            <li class="listsort">내림차순</li>
+            <li class="listsort">오래된순</li>
+            <li class="listsort">최신순</li>
           </ul>
         </div>
-        <hr />
-        <div id="wapper-top">
-          <div class="item">
-            <div>
-              <div style="position: relative">
-                <div style="position: absolute"></div>
-                <div>
-                  <a href="/detail"><img src="/img&font/img/pr_br.png" class="itemimg" /> </a>
-                </div>
-              </div>
-            </div>
-      
-            <h3>식빵 맛집</h3>
-            <div class="early">
-              <p>얼리버드</p>
-              <p><span class="early">수량 : 47</span></p>
-            </div>
-          </div>
-      
-          <div class="item">
-            <div>
-              <div style="position: relative">
-                <div style="position: absolute"></div>
-                <div>
-                  <a href="/detail"> <img src="/img&font/img/pr_ph.png" class="itemimg" /></a>
-                </div>
-              </div>
-            </div>
-            <h3>아이폰 13 Pro</h3>
-            <div class="early">
-              <p>얼리버드</p>
-              <p><span class="early">수량 : 2</span></p>
-            </div>
+        <hr class="hr" />
+        <div id="wapper" class = "funplan">
+        <% for(var i=0; i<rows.length; i++) { 
+                var data = rows[i];
+              %>
+    <div class="item">
+      <div>
+        <div style="position: relative">
+          <div style="position: absolute"></div>
+          <div>
+            <a href="/detail"><img src="public<%= data.image %>" class="itemimg" /> </a>
           </div>
         </div>
-      
-        <div id="wapper-middle">
-          <div class="item">
-            <div>
-              <div style="position: relative">
-                <div style="position: absolute"></div>
-                <div>
-                  <a href="/detail"> <img src="/img&font/img/pr_tum.png" class="itemimg" /></a>
-                </div>
-              </div>
-            </div>
-            <h3>곰표 텀블러</h3>
-            <div class="early">
-              <p>얼리버드</p>
-              <p><span class="early">수량 : 78</span></p>
-            </div>
+      </div>
+      <h3><%= data.title %></h3>
+      <div class="early">
+        <p><span id="hidden"><%= data.content %></span></p>
+        <p><span class="early">수량 : <%= data.count %></span></p>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  
+<!-- 
+    <div class="item">
+      <div>
+        <div style="position: relative">
+          <div style="position: absolute"></div>
+          <div>
+            <a href="/detail"> <img src="img/pr_ph.png" class="itemimg" /></a>
           </div>
-      
-          <div class="item">
-            <div>
-              <div style="position: relative">
-                <div style="position: absolute"></div>
-                <div>
-                  <a href="/detail"> <img src="/img&font/img/pr_tv.png" class="itemimg" /></a>
-                </div>
-              </div>
-            </div>
-      
-            <h3>LG 스피커 얼리버드</h3>
-            <div class="early">
-              <p>얼리버드</p>
-              <p><span class="early">수량 : 90</span></p>
-            </div>
+        </div>
+      </div>
+      <h3>아이폰 13 Pro</h3>
+      <div class="early">
+        <p>얼리버드</p>
+        <p><span class="early">수량 : 2</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div id="wapper-middle">
+    <div class="item">
+      <div>
+        <div style="position: relative">
+          <div style="position: absolute"></div>
+          <div>
+            <a href="/detail"> <img src="img/pr_tum.png" class="itemimg" /></a>
+          </div>
+        </div>
+      </div>
+      <h3>곰표 텀블러</h3>
+      <div class="early">
+        <p>얼리버드</p>
+        <p><span class="early">수량 : 78</span></p>
+      </div>
+    </div>
+
+    <div class="item">
+      <div>
+        <div style="position: relative">
+          <div style="position: absolute"></div>
+          <div>
+            <a href="/detail"> <img src="img/pr_tv.png" class="itemimg" /></a>
           </div>
         </div>
       </div>
 
-      <hr />
-      <footer data-include="/Footer.html" class="footer">
-      </footer>
+      <h3>LG 스피커 얼리버드</h3>
+      <div class="early">
+        <p>얼리버드</p>
+        <p><span class="early">수량 : 90</span></p>
+      </div>
     </div>
-    <script type="text/javascript" src="/jquery-3.6.0.js"></script>
-    <script src="/consumer/Main.js"></script>
-    <script src="/H_F.js"></script>
-  </body>
+  </div>
+</div> -->
+
+<hr />
+<footer data-include="/Footer.html" class="footer">
+</footer>
+</div>
+<script type="text/javascript" src="/jquery-3.6.0.js"></script>
+<script src="/consumer/Main.js"></script>
+<script src="/H_F.js"></script>
+</body>
 </html>
