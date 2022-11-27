@@ -3,6 +3,12 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const session = require("express-session");
+const FileStore = require("session-file-store")(session); // 세션을 파일에 저장
+const cookieParser = require("cookie-parser");
+const ejs = require("ejs");
+const multer = require("multer");
+const { runInNewContext } = require("vm");
+const { dirname } = require("path");
 
 // express 설정 1
 const app = express();
@@ -28,7 +34,22 @@ app.use(express.static(__dirname + "/"));
 
 // 페이지 이동 라우터
 
+// 카테고리
+const main = require("./index");
+const detail = require("./detailRouter");
+const furnitrue = require("./furnitureRouter");
+const electronic = require("./electronicRouter");
+const daily = require("./dailyRouter");
+const hobby = require("./hobbyRouter");
+const beauty = require("./beautyRouter");
+
 app.use("/", main);
+app.use("/detail", detail);
+app.use("/furniture", furnitrue);
+app.use("/elec", electronic);
+app.use("/daily", daily);
+app.use("/hobby", hobby);
+app.use("/beauty", beauty);
 
 // 사업자
 const productEdit = require("./productEditRouter");
@@ -36,6 +57,17 @@ const registration = require("./RegistrationAndmodificationRouter");
 
 app.use("/productEdit", productEdit);
 app.use("/RegistrationAndmodification", registration);
+
+// 소비자
+const all = require("./allRouter");
+const fundingPlan = require("./fundingPlanRouter");
+const early = require("./earlyRouter");
+const search = require("./searchRouter");
+
+app.use("/all", all);
+app.use("/funding_plan", fundingPlan);
+app.use("/early", early);
+app.use("/search", search);
 
 // 회원가입
 const signup = require("./signupRouter");

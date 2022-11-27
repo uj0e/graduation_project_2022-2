@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>사업자 - 문의하기</title>
+    <link rel="stylesheet" href="/business/style.css" />
+    <link rel="stylesheet" href="/business/service_style.css" />
+  </head>
+  <body>
+    <header data-include="/Header_login.html">
+    </header>
+    <!--문의하기 내용-->
+    <h1>문의하기</h1>
+    <hr style="width: 95%" />
+    <!--문의하기 내용 작성부분-->
+    <form>
+      <div class="service-question">
+        <label for="title-name">제목</label>
+        <input type="text" id="title-name" placeholder="제목을 입력하세요.">
+      </div>
+      <div class="service-question">
+        <label for="answer-question"> 문의내역 </label>
+        <select class="answer-question">
+            <option> 문의 내용을 입력하세요 </option>
+            <option> 결제/환불 </option>
+            <option> 회원가입/탈퇴 </option>
+            <option> 물품 등록/삭제 </option>
+            <option> 배송상태 </option>
+            <option> 기타내역 </option>
+        </select> <br>
+      </div>
+      <div class="service-question">
+        <label for="title-size-email" id="label-size-email">이메일</label>
+        <input type="email" id="title-size-email" placeholder="이메일을 입력하세요.">
+      </div>
+      <div class="service-question" class="lineset">
+        <label id="label-size">문의내용</label>
+        <textarea id="title-size" cols="65" rows="10" placeholder="문의 내용을 입력하세요."></textarea>
+      </div>
+      <div class="mamber-box-position">
+        <input type="checkbox" name="status" id="mamber-box" onclick="checkOnlyOne(this)"/>
+        <label for="mamber-box">회원</label>
+        <input type="checkbox" name="status" id="mamber-box" onclick="checkOnlyOne(this)"/>
+        <label for="mamber-box">비회원</label>
+      </div>
+      <div>
+        <button id="button-submit">제출하기</button>
+      </div>
+    </form>
+    <!--여기까지-->
+    <hr id="footer-hr" />
+    <footer data-include="/Footer.html" class="footer">
+    </footer>
+  </body>
+  <script src="./service-style.js"></script>
+  <script src="./index.js"></script>
+  <script src="/H_F.js"></script>
+</html>
